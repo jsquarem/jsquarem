@@ -362,4 +362,5 @@ export const navLinks = [
   { label: "Testimonials", href: "#testimonials" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
+  { label: "Business Card", href: "/business-card.html", external: true },
 ];
