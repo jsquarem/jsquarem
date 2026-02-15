@@ -37,12 +37,12 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6">
-        {/* Profile Photo */}
+        {/* Profile Photo - extra top margin on mobile, tighter below to keep height */}
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, type: "spring", stiffness: 200 }}
-          className="mb-8"
+          className="mt-[5vh] sm:mt-0 mb-4 sm:mb-8"
         >
           <div className="relative inline-block">
             <img
@@ -59,7 +59,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-heading font-bold text-slate-800 dark:text-white mb-4 transition-colors duration-300"
+          className="text-4xl sm:text-5xl md:text-7xl font-heading font-bold text-slate-800 dark:text-white mb-2 sm:mb-4 transition-colors duration-300"
         >
           {profile.name}
         </motion.h1>
@@ -69,7 +69,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="h-10 mb-8"
+          className="h-10 mb-4 sm:mb-8"
         >
           <span className="text-xl md:text-2xl text-indigo-700 dark:text-indigo-200 font-mono transition-colors duration-300">
             {typedText}
@@ -82,7 +82,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.6 }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-10"
+          className="flex flex-wrap items-center justify-center gap-4 mb-6 sm:mb-10"
         >
           <a
             href="#projects"
