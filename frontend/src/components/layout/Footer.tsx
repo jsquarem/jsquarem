@@ -1,5 +1,5 @@
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { FiMail, FiFileText } from "react-icons/fi";
+import { FiMail, FiFileText, FiCreditCard } from "react-icons/fi";
 import { profile } from "../../data/content";
 
 export default function Footer() {
@@ -33,6 +33,15 @@ export default function Footer() {
               aria-label="Resume"
             >
               <FiFileText size={18} />
+            </a>
+            <a
+              href="/business-card.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-muted dark:text-text-muted-dark hover:text-primary dark:hover:text-primary-light transition-colors"
+              aria-label="Business card"
+            >
+              <FiCreditCard size={18} />
             </a>
             <a
               href={profile.social.linkedin}

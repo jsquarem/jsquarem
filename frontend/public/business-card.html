@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeff Martin — Business Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #c7d2fe 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media print {
+      body { padding: 0; background: #fff; min-height: auto; }
+    }
+    .page {
+      width: 100%;
+      max-width: 840px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 32px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+      padding: 56px 48px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+    @media print {
+      .card { box-shadow: none; border: 1px solid #e2e8f0; }
+    }
+    .card-info { flex: 1; min-width: 0; }
+    .card-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2.7rem;
+      color: #1e293b;
+      margin: 0 0 8px 0;
+    }
+    .card-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #4f46e5;
+      margin: 0 0 20px 0;
+    }
+    .card-contact {
+      font-size: 1.5rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    .card-contact a {
+      color: #4f46e5;
+      text-decoration: none;
+    }
+    .card-contact a:hover { text-decoration: underline; }
+    .qr-wrap {
+      flex-shrink: 0;
+      width: 200px;
+      height: 200px;
+    }
+    .qr-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 32px;
+      font-size: 1.125rem;
+      color: #64748b;
+      text-decoration: none;
+    }
+    .back-link:hover { color: #4f46e5; }
+    @media print {
+      .back-link { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <div class="card-info">
+        <h1 class="card-name">Jeff Martin</h1>
+        <p class="card-title">Full Stack Developer</p>
+        <p class="card-contact">
+          Austin, TX<br />
+          <a href="mailto:jeffjmart@gmail.com">jeffjmart@gmail.com</a><br />
+          <a href="https://www.jsquarem.com/">jsquarem.com</a>
+        </p>
+      </div>
+      <div class="qr-wrap">
+        <img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Fwww.jsquarem.com%2F"
+          alt="QR code for jsquarem.com"
+          width="200"
+          height="200"
+        />
+      </div>
+    </div>
+    <a href="/" class="back-link">← Back to site</a>
+  </div>
+</body>
+</html>
