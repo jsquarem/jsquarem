@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeff Martin — Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1a2e;
+      --ink-muted: #4a4a5a;
+      --accent: #4f46e5;
+      --rule: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    .resume {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0.4in 0.5in;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--accent);
+    }
+    .header h1 {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 22pt;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+    }
+    .header .title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .header .contact {
+      font-size: 9.5pt;
+      color: var(--ink-muted);
+    }
+    .header .contact a {
+      color: var(--ink-muted);
+      text-decoration: none;
+    }
+    .header .contact span { margin: 0 6px; }
+
+    /* Sections */
+    section { margin-bottom: 14px; }
+    section h2 {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin: 0 0 8px 0;
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .summary {
+      font-size: 10pt;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+
+    /* Experience */
+    .job {
+      margin-bottom: 12px;
+    }
+    .job:last-child { margin-bottom: 0; }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .job-title { font-weight: 700; font-size: 10.5pt; }
+    .job-date { font-size: 9.5pt; color: var(--ink-muted); }
+    .job-company { font-size: 10pt; color: var(--ink-muted); margin-bottom: 4px; }
+    .job-desc {
+      font-size: 9.5pt;
+      color: var(--ink-muted);
+      line-height: 1.45;
+    }
+    .job-desc ul { margin: 4px 0 0 0; padding-left: 18px; }
+    .job-desc li { margin-bottom: 2px; }
+
+    /* Projects */
+    .project { margin-bottom: 10px; }
+    .project:last-child { margin-bottom: 0; }
+    .project-title { font-weight: 700; font-size: 10pt; }
+    .project-subtitle { font-size: 9.5pt; color: var(--accent); margin-bottom: 2px; }
+    .project-desc { font-size: 9.5pt; color: var(--ink-muted); line-height: 1.4; }
+    .project-tech { font-size: 9pt; color: var(--ink-muted); margin-top: 2px; }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px 16px;
+      font-size: 9.5pt;
+      color: var(--ink-muted);
+    }
+    .skills-grid span { font-weight: 500; color: var(--ink); }
+
+    /* Education */
+    .edu-item { margin-bottom: 6px; }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-degree { font-weight: 600; font-size: 10pt; }
+    .edu-school { font-size: 9.5pt; color: var(--ink-muted); }
+
+    /* Testimonial */
+    .testimonial {
+      font-size: 9pt;
+      font-style: italic;
+      color: var(--ink-muted);
+      line-height: 1.45;
+      padding: 8px 10px;
+      background: #f8fafc;
+      border-left: 3px solid var(--accent);
+    }
+    .testimonial-source { font-style: normal; font-size: 9pt; margin-top: 4px; font-weight: 600; color: var(--ink); }
+
+    /* Print toolbar */
+    .print-toolbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #1a1a2e;
+      color: #fff;
+      font-size: 14px;
+    }
+    .print-toolbar a,
+    .print-toolbar button {
+      color: #fff;
+      text-decoration: none;
+      background: #4f46e5;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .print-toolbar a:hover,
+    .print-toolbar button:hover {
+      background: #6366f1;
+    }
+    .print-toolbar .back {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .print-toolbar .back:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    .print-toolbar .print-tip {
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+      max-width: 320px;
+    }
+    @media (max-width: 640px) {
+      .print-toolbar .print-tip { display: none; }
+    }
+    .resume { padding-top: 56px; }
+
+    /* Print – no browser header/footer; clean margins */
+    @page {
+      size: letter;
+      margin: 0.5in;
+    }
+    @media print {
+      .print-toolbar { display: none !important; }
+      .resume { padding-top: 0; padding: 0.35in 0; max-width: none; }
+      body { font-size: 10pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; }
+      section { margin-bottom: 12px; }
+      .job, .project { break-inside: avoid; }
+      .header { margin-bottom: 14px; padding-bottom: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-toolbar">
+    <a href="/" class="back">← Back to site</a>
+    <button type="button" onclick="window.print()">Print / Save as PDF</button>
+    <span class="print-tip">Tip: In the print dialog, turn off “Headers and footers” for a clean PDF with no date or URL.</span>
+  </div>
+  <div class="resume">
+    <header class="header">
+      <h1>Jeff Martin</h1>
+      <div class="title">Full Stack Developer</div>
+      <div class="contact">
+        Austin, TX
+        <span>|</span>
+        <a href="mailto:jeffjmart@gmail.com">jeffjmart@gmail.com</a>
+        <span>|</span>
+        <a href="https://linkedin.com/in/jsquarem">linkedin.com/in/jsquarem</a>
+        <span>|</span>
+        <a href="https://github.com/jsquarem">github.com/jsquarem</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p class="summary">
+        Full stack developer at Weaver and Jacobs Constructors (Cuero, TX), building and maintaining Laravel applications that power hundreds of millions in active construction projects—customer-facing portals and internal systems for projects, timelines, and operations. Earlier experience includes production web apps and internal tools: PHP data pipelines, CRUD apps, and HTML email systems at a startup; React/Node and Laravel projects across recipe platforms, client sites, and developer tools. General Assembly (Full Stack Software Engineering). Strong focus on React frontends, Node.js and Laravel backends, and end-to-end solutions for businesses of all sizes.
+      </p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Full Stack Developer</span>
+          <span class="job-date">Jan 2023 – Present</span>
+        </div>
+        <div class="job-company">Weaver and Jacobs Constructors — Cuero, TX</div>
+        <div class="job-desc">
+          Build and maintain multiple Laravel applications for a medium-sized general contractor in Central Texas. The platform powers hundreds of millions of dollars in active customer projects.
+          <ul>
+            <li>Customer-facing portals and auth-only internal systems for projects, timelines, and operations</li>
+            <li>PHP/Laravel with separate codebases for public and internal tools; MySQL, REST APIs, shared authentication</li>
+            <li>Ongoing feature development and maintenance for production construction workflows</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Full Stack Developer</span>
+          <span class="job-date">Prior to 2023</span>
+        </div>
+        <div class="job-company">101domain</div>
+        <div class="job-desc">
+          Full stack development for domain registration and management platform.
+          <ul>
+            <li>Built and maintained customer-facing web applications and APIs for domain search, registration, and management</li>
+            <li>Developed internal tools and integrations supporting domain services, billing, and provider workflows</li>
+            <li>Worked across the stack with PHP, JavaScript, databases, and third-party APIs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Software / Web Developer</span>
+          <span class="job-date">Prior to 2023</span>
+        </div>
+        <div class="job-company">elocal</div>
+        <div class="job-desc">
+          Web application and internal tool development for local business and marketing products.
+          <ul>
+            <li>Built and maintained customer-facing products and backend systems</li>
+            <li>Developed internal tools for data handling, reporting, and operations</li>
+            <li>Contributed to full stack features using PHP, JavaScript, HTML/CSS, and SQL</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Software / Web Developer</span>
+          <span class="job-date">Prior to 2023</span>
+        </div>
+        <div class="job-company">Turnkey Systems</div>
+        <div class="job-desc">
+          Full stack development and internal tooling for business systems and operations.
+          <ul>
+            <li>Built and maintained web applications and internal tools supporting operations and clients</li>
+            <li>Developed data pipelines, CRUD applications, and reporting interfaces</li>
+            <li>Worked with PHP, MySQL, JavaScript, and HTML/CSS to deliver production features</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div><span>Languages:</span> JavaScript, TypeScript, Python, PHP, HTML, CSS, SQL</div>
+        <div><span>Frameworks:</span> React, Next.js, Laravel, Express.js, Django, Tailwind, Bootstrap</div>
+        <div><span>Databases:</span> MongoDB, PostgreSQL, MySQL</div>
+        <div><span>Tools:</span> Node.js, Git, Docker, Vite, REST APIs, Firebase</div>
+        <div><span>DevOps:</span> AWS, Vercel, Netlify, Heroku, Linux, CI/CD</div>
+        <div><span>Other:</span> Figma, Photoshop, Illustrator</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="edu-item">
+        <div class="edu-degree">Full Stack Software Engineering</div>
+        <div class="edu-school">General Assembly</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Web Development with HTML, CSS, & Bootstrap</div>
+        <div class="edu-school">Montclair State University</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Business Management</div>
+        <div class="edu-school">Indiana University of Pennsylvania</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Recommendations</h2>
+      <div class="testimonial">
+        "Jeff was one of my best students in 6 years of teaching. He went above and beyond on all of his unit projects, built on top of what we learned, has a tremendous work ethic, and was always willing to help classmates. He would make a tremendous asset on any team. Hire him, you won't regret it."
+        <div class="testimonial-source">— Jim Haff, Global Lead Web Development at General Assembly</div>
+      </div>
+      <div class="testimonial">
+        "Jeff is remarkably talented at web development and was well and beyond the star pupil of our cohort. He was consistently a resource among his peers and pushed the group's standard of excellence to higher levels. He would be a solid asset to any organization."
+        <div class="testimonial-source">— Jason Shprintz, Senior Front End Developer</div>
+      </div>
+      <div class="testimonial">
+        "Developing an application using Python, Django, and PostgreSQL in the timeframe of a week, Jeff was a complete professional when disseminating the structure of the API, task management within the group, and accountability with personal responsibilities. We accomplished an app exceeding expectations. Jeff took the brunt of programming labor and spent countless hours aiding in troubleshooting for others in the group."
+        <div class="testimonial-source">— Elijah Silvereagle, Software Engineer</div>
+      </div>
+      <div class="testimonial">
+        "Jeff built the marketing department from the ground up. Much of 101domain's growth—from the website skin, UX, content, and company culture—can be directly attributed to his work. As a leader he creates an atmosphere that fosters personal and professional growth. He has an insane attention to detail, thinks long-term, and is data-driven. Jeff is a well-rounded expert and his passionate leadership style makes him an asset to any company. I consider him a great mentor."
+        <div class="testimonial-source">— Shani Jensen, Digital Marketing (reported to Jeff at 101domain)</div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

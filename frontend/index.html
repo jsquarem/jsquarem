@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        var stored = localStorage.getItem('theme');
+        var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.classList.add('dark');
+        else document.documentElement.classList.remove('dark');
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/favicon.jpeg" />
+    <link rel="apple-touch-icon" href="/favicon.jpeg" />
+
+    <!-- Primary Meta Tags -->
+    <title>Jeff Martin | Full Stack Developer</title>
+    <meta name="title" content="Jeff Martin | Full Stack Developer" />
+    <meta name="description" content="Full stack developer based in Austin, TX. I build modern web applications, backend systems, and custom websites for businesses of all sizes." />
+    <meta name="author" content="Jeff Martin" />
+    <meta name="keywords" content="Jeff Martin, Full Stack Developer, Web Developer, React, Node.js, Austin TX, Freelance Developer, Web Applications" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jeff Martin | Full Stack Developer" />
+    <meta property="og:description" content="Full stack developer based in Austin, TX. I build modern web applications, backend systems, and custom websites for businesses of all sizes." />
+    <meta property="og:image" content="/favicon.jpeg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Jeff Martin | Full Stack Developer" />
+    <meta property="twitter:description" content="Full stack developer based in Austin, TX. I build modern web applications, backend systems, and custom websites for businesses of all sizes." />
+    <meta property="twitter:image" content="/favicon.jpeg" />
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jeff Martin",
+        "url": "https://jsquarem.com",
+        "image": "/favicon.jpeg",
+        "jobTitle": "Full Stack Developer",
+        "description": "Full stack developer based in Austin, TX specializing in React, Node.js, and end-to-end web solutions.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Austin",
+          "addressRegion": "TX",
+          "addressCountry": "US"
+        },
+        "email": "jeffjmart@gmail.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/jsquarem/",
+          "https://github.com/jsquarem"
+        ],
+        "knowsAbout": [
+          "JavaScript", "TypeScript", "React", "Node.js", "Express.js",
+          "Python", "Django", "PHP", "MongoDB", "PostgreSQL", "MySQL",
+          "REST APIs", "Docker", "AWS", "Tailwind CSS", "Full Stack Development"
+        ],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Full Stack Developer",
+          "skills": "React, Node.js, TypeScript, Python, PostgreSQL, MongoDB, AWS, Docker"
+        },
+        "alumniOf": [
+          {
+            "@type": "EducationalOrganization",
+            "name": "General Assembly",
+            "department": "Software Engineering"
+          },
+          {
+            "@type": "EducationalOrganization",
+            "name": "Montclair State University"
+          },
+          {
+            "@type": "EducationalOrganization",
+            "name": "Indiana University of Pennsylvania"
+          }
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Website Development",
+              "description": "Modern, responsive websites built to exact specifications."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Application Development",
+              "description": "Full stack applications with databases, authentication, and APIs."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Backend Development",
+              "description": "Robust APIs, dashboards, and project management systems."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "UI/UX Design",
+              "description": "Clean, intuitive interfaces designed around users."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
