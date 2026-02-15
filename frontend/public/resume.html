@@ -347,9 +347,21 @@
       </div>
       <div class="testimonial">
         "Jeff built the marketing department from the ground up. Much of 101domain's growth—from the website skin, UX, content, and company culture—can be directly attributed to his work. As a leader he creates an atmosphere that fosters personal and professional growth. He has an insane attention to detail, thinks long-term, and is data-driven. Jeff is a well-rounded expert and his passionate leadership style makes him an asset to any company. I consider him a great mentor."
-        <div class="testimonial-source">— Shani Jensen, Digital Marketing (reported to Jeff at 101domain)</div>
+        <div class="testimonial-source">— Shani Jensen, Marketing Campaign Manager (reported to Jeff at 101domain)</div>
       </div>
     </section>
   </div>
+  <script>
+    (function () {
+      var wantPrint = /[?&]print=1/i.test(window.location.search);
+      if (wantPrint) {
+        if (document.readyState === 'complete') {
+          setTimeout(window.print, 100);
+        } else {
+          window.addEventListener('load', function () { setTimeout(window.print, 100); });
+        }
+      }
+    })();
+  </script>
 </body>
 </html>

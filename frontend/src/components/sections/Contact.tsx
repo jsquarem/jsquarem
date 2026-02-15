@@ -55,12 +55,12 @@ export default function Contact() {
               View Resume
             </a>
             <a
-              href={profile.resumeUrl}
+              href="/resume.html?print=1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-text-muted dark:text-text-muted-dark hover:text-primary dark:hover:text-primary-light transition-colors"
             >
-              <FiDownload size={16} /> Download Resume (PDF)
+              <FiDownload size={16} /> Download Resume
             </a>
           </div>
 
