@@ -42,7 +42,7 @@ export default function Hero() {
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, type: "spring", stiffness: 200 }}
-          className="mt-[5vh] sm:mt-0 mb-4 sm:mb-8"
+          className="mt-[7vh] sm:mt-0 mb-4 sm:mb-8"
         >
           <div className="relative inline-block">
             <img
